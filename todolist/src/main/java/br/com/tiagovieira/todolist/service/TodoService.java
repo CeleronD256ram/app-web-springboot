@@ -10,10 +10,10 @@ import br.com.tiagovieira.todolist.repository.TodoRespository;
 
 @Service
 public class TodoService {
-
+    //@Autowide = Caso queria fazer a injeção de depêndencia pelo atributo
     private TodoRespository todoRespository;
 
-
+    
     public TodoService(TodoRespository todoRespository) {
         this.todoRespository = todoRespository;
     }
