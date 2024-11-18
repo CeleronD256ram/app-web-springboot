@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "todos")
@@ -17,6 +18,29 @@ public class Todo {
     private String descricao;
     private boolean realizado;
     private int prioridade;
+
+
+
+    public Todo() {
+
+    }
+  
+    public Todo(Long id, @NotBlank String nome, @NotBlank String descricao, boolean realizado, int prioridade) {
+      this.id = id;
+      this.nome = nome;
+      this.descricao = descricao;
+      this.realizado = realizado;
+      this.prioridade = prioridade;
+    }
+  
+    public Todo(String nome, String descricao, boolean realizado, int prioridade) {
+      this.nome = nome;
+      this.descricao = descricao;
+      this.realizado = realizado;
+      this.prioridade = prioridade;
+    }
+    
+
 
 
     public Long getId() {
